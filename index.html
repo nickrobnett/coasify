@@ -78,14 +78,6 @@
   .stat-value { font-family: var(--display); font-size: 36px; font-weight: 600; color: var(--ci-green); line-height: 1; }
   .stat-sub { font-size: 13px; color: var(--ci-green-300); margin-top: 4px; font-style: italic; }
 
-  .fee-table { width: 100%; max-width: 640px; border-collapse: collapse; font-size: 15px; margin-top: 40px; }
-  .fee-table caption { text-align: left; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ci-green-500); padding-bottom: 12px; }
-  .fee-table th { text-align: left; padding: 10px 16px; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ci-green-500); border-bottom: 1px solid var(--ci-green-100); }
-  .fee-table th:last-child, .fee-table td:last-child { text-align: right; }
-  .fee-table td { padding: 12px 16px; border-bottom: 1px solid var(--ci-green-50); color: var(--ci-green-800); }
-  .fee-table tr:last-child td { border-bottom: none; }
-  .table-note { font-size: 14px; font-style: italic; color: var(--ci-green-500); margin-top: 14px; }
-
   .contact-card { background: var(--ci-gold-50); border: 1px solid var(--ci-gold-200); border-radius: 3px; padding: 40px; margin-top: 8px; }
   .contact-card h2 { margin-bottom: 12px; }
   .contact-card p { color: var(--ci-gold-700); max-width: 560px; }
@@ -131,35 +123,7 @@
 <section id="problem">
   <div class="section-label">The coordination problem</div>
   <h2>Stablecoins are the same price. The market charges you to move between them anyway.</h2>
-  <p class="lede">Stablecoins are a coordination problem, not a price discovery problem. There is no information in the price of swapping USDC for USDT — both are one dollar. Yet the ecosystem extracts hundreds of millions per year in fees on these identical-value transfers.</p>
-  <div class="stat-block">
-    <div class="stat">
-      <div class="stat-label">Stablecoin volume, 2025</div>
-      <div class="stat-value">$33T</div>
-      <div class="stat-sub">Up 72% year over year</div>
-    </div>
-    <div class="stat">
-      <div class="stat-label">Annual friction cost</div>
-      <div class="stat-value">$250M+</div>
-      <div class="stat-sub">Estimated, in swap fees alone</div>
-    </div>
-    <div class="stat">
-      <div class="stat-label">Typical swap cost</div>
-      <div class="stat-value">3–20 bps</div>
-      <div class="stat-sub">Depending on venue</div>
-    </div>
-  </div>
-  <table class="fee-table">
-    <caption>What the market charges today</caption>
-    <thead><tr><th>Venue</th><th>Fee</th></tr></thead>
-    <tbody>
-      <tr><td>Curve Finance</td><td>4 bps</td></tr>
-      <tr><td>Centralized exchanges</td><td>3–10 bps</td></tr>
-      <tr><td>Issuer redemptions</td><td>5–10 bps</td></tr>
-      <tr><td>Bridges &amp; L2s</td><td>5–20 bps</td></tr>
-    </tbody>
-  </table>
-  <p class="table-note">None of these fees reflects the cost of moving between assets of identical value.</p>
+  <p class="lede">Stablecoins are a coordination problem, not a price discovery problem. There is no information in the price of swapping USDC for USDT — both are one dollar. Yet every venue charges a spread to move between them, and none of that fee reflects the cost of moving between assets of identical value.</p>
 </section>
 
 <section id="dollar-store">
@@ -171,8 +135,7 @@
     <a class="tag" href="https://github.com/wandering-soupsmith/dollar">Open source ↗</a>
   </div>
   <p class="lede">Dollar Store swaps stablecoins at exactly 1:1, with no protocol fee. It is built for coordination, not price discovery.</p>
-  <p>Exchanges use order books and bonding curves to find equilibrium prices. That machinery is necessary for volatile assets. Applied to stablecoins, it forces users to pay for price discovery on assets whose price is already one dollar.</p>
-  <p>Dollar Store replaces it with a queue. Swaps match first-in, first-out at exactly 1:1 and fill automatically as reserves arrive. No fees, no slippage, no toll for moving value between identical assets.</p>
+  <p>Where exchanges use order books and bonding curves — machinery built for volatile assets — Dollar Store uses a queue. Swaps match first-in, first-out at exactly 1:1 and fill automatically as reserves arrive.</p>
   <div class="stat-block">
     <div class="stat">
       <div class="stat-label">Protocol fee</div>
@@ -196,8 +159,7 @@
 <section id="vision">
   <div class="section-label">The long-term vision</div>
   <h2>Every asset that moves on-chain brings the same coordination problem. Coasify is building the swap layer.</h2>
-  <p class="lede">On-chain assets are increasingly useful: they earn yield, settle payments, and serve as collateral. As that utility grows, capital stays on-chain — and moving between representations of the same asset becomes one of the most frequent financial operations in the world.</p>
-  <p>Stablecoins are the first market. Tokenized gold, treasuries, and securities follow, and each arrives with the same structure: identical assets, needless friction. The infrastructure that solves it once solves it every time.</p>
+  <p class="lede">As on-chain assets become more useful, capital stays on-chain — and moving between representations of the same asset becomes one of the most frequent financial operations in the world. Stablecoins are the first market. Tokenized gold, treasuries, and securities arrive with the same structure, and the infrastructure that solves it once solves it every time.</p>
   <div class="pullquote">
     <p>&ldquo;When transaction costs approach zero, resources flow to their most efficient allocation.&rdquo;</p>
     <cite>Ronald Coase — The Problem of Social Cost, 1960</cite>
@@ -207,8 +169,7 @@
 <section id="founder">
   <div class="section-label">Founder</div>
   <h2>Nick Robnett</h2>
-  <p class="lede">Nick is the founder and chief executive of Coasify. He was formerly head of asset growth at Paxos, where he closed anchor partnerships including PayPal's PYUSD and managed distribution relationships across more than a hundred exchanges, payments companies, and trading firms.</p>
-  <p>He designed and built Dollar Store independently. The protocol is live on Ethereum mainnet and was audited by OpenZeppelin in March 2026.</p>
+  <p class="lede">Nick is the founder and chief executive of Coasify, and formerly head of asset growth at Paxos, where he closed anchor partnerships including PayPal's PYUSD. He designed and built Dollar Store independently; it is live on Ethereum mainnet and was audited by OpenZeppelin in March 2026.</p>
 </section>
 
 <section id="contact">
