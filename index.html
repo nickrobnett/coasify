@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coasify — Frictionless financial infrastructure</title>
+<meta name="description" content="Coasify Corporation is the institutional parent behind a portfolio of DeFi protocols, beginning with Dollar Store: zero-fee 1:1 swaps between stablecoins.">
+<meta property="og:title" content="Coasify">
+<meta property="og:description" content="A holding company for frictionless financial infrastructure.">
+<meta property="og:url" content="https://coasify.com/">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://coasify.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ci-white:       #FAFAF8;
+    --ci-cream:       #F0EDE6;
+    --ci-green-900:   #0D1F15;
+    --ci-green-800:   #1A3828;
+    --ci-green:       #2D5A3D;
+    --ci-green-500:   #4A7C5A;
+    --ci-green-300:   #7FAF92;
+    --ci-green-100:   #C2D9CC;
+    --ci-green-50:    #EAF3EE;
+    --ci-gold:        #B08A2A;
+    --ci-gold-700:    #7A5A0E;
+    --ci-gold-200:    #E8D4A0;
+    --ci-gold-50:     #F8F1E0;
+    --display:        'Cormorant Garamond', 'Palatino Linotype', Palatino, Georgia, serif;
+    --body:           'EB Garamond', Georgia, 'Times New Roman', serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--ci-white); color: var(--ci-green-900); font-family: var(--body); font-size: 17px; line-height: 1.7; scroll-behavior: smooth; }
+  body { max-width: 960px; margin: 0 auto; padding: 0 48px 96px; }
+
+  a { color: var(--ci-green); }
+
+  header { display: flex; justify-content: space-between; align-items: baseline; padding: 40px 0; border-bottom: 1px solid var(--ci-green-100); }
+  .wordmark { font-family: var(--display); font-size: 28px; font-weight: 600; color: var(--ci-green); text-decoration: none; letter-spacing: -0.01em; }
+  nav { display: flex; gap: 32px; }
+  nav a { font-size: 15px; color: var(--ci-green-500); text-decoration: none; letter-spacing: 0.04em; }
+  nav a:hover { color: var(--ci-green); }
+
+  .hero { padding: 112px 0 96px; }
+  .overline { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ci-gold); margin-bottom: 24px; }
+  .hero h1 { font-family: var(--display); font-size: 62px; font-weight: 600; line-height: 1.06; color: var(--ci-green); letter-spacing: -0.02em; max-width: 720px; }
+  .hero p { font-size: 19px; color: var(--ci-green-500); max-width: 560px; margin-top: 28px; }
+  .hero-actions { display: flex; gap: 16px; align-items: center; margin-top: 40px; flex-wrap: wrap; }
+
+  .btn-primary { display: inline-block; padding: 12px 32px; background: var(--ci-green); color: var(--ci-white); font-family: var(--body); font-size: 15px; font-weight: 500; letter-spacing: 0.04em; border: 1px solid var(--ci-green); border-radius: 2px; text-decoration: none; }
+  .btn-primary:hover { background: var(--ci-green-800); border-color: var(--ci-green-800); }
+  .btn-ghost { display: inline-block; padding: 12px 8px; color: var(--ci-green-500); font-size: 15px; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--ci-green-100); }
+  .btn-ghost:hover { color: var(--ci-green); }
+
+  section { padding: 80px 0; border-top: 1px solid var(--ci-green-100); }
+  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ci-green-500); margin-bottom: 28px; }
+  section h2 { font-family: var(--display); font-size: 38px; font-weight: 500; line-height: 1.15; color: var(--ci-green); margin-bottom: 24px; max-width: 640px; }
+  section .lede { max-width: 640px; margin-bottom: 16px; }
+  section p { max-width: 640px; color: var(--ci-green-900); }
+  section p + p { margin-top: 16px; }
+
+  .pullquote { border-left: 3px solid var(--ci-gold); padding: 4px 0 4px 28px; margin: 48px 0 0; }
+  .pullquote p { font-family: var(--display); font-size: 27px; font-weight: 400; font-style: italic; color: var(--ci-green); line-height: 1.4; max-width: 620px; }
+  .pullquote cite { font-size: 13px; color: var(--ci-green-500); margin-top: 12px; display: block; font-style: normal; letter-spacing: 0.08em; }
+
+  .tag-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 24px 0 32px; }
+  .tag { display: inline-block; padding: 4px 14px; border: 1px solid var(--ci-green-100); border-radius: 2px; font-size: 12px; color: var(--ci-green-500); letter-spacing: 0.06em; background: var(--ci-green-50); }
+
+  .stat-block { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--ci-green-100); border: 1px solid var(--ci-green-100); border-radius: 3px; overflow: hidden; margin-top: 40px; }
+  .stat { background: var(--ci-white); padding: 24px; }
+  .stat-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ci-green-500); margin-bottom: 6px; }
+  .stat-value { font-family: var(--display); font-size: 36px; font-weight: 600; color: var(--ci-green); line-height: 1; }
+  .stat-sub { font-size: 13px; color: var(--ci-green-300); margin-top: 4px; font-style: italic; }
+
+  .contact-card { background: var(--ci-gold-50); border: 1px solid var(--ci-gold-200); border-radius: 3px; padding: 40px; margin-top: 8px; }
+  .contact-card h2 { margin-bottom: 12px; }
+  .contact-card p { color: var(--ci-gold-700); max-width: 560px; }
+  .contact-card a.email { font-family: var(--display); font-size: 24px; font-weight: 500; color: var(--ci-green); text-decoration: none; display: inline-block; margin-top: 20px; border-bottom: 1px solid var(--ci-green-300); }
+
+  footer { margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--ci-green-100); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .footer-wordmark { font-family: var(--display); font-size: 22px; font-weight: 500; color: var(--ci-green-300); }
+  .footer-note { font-size: 13px; color: var(--ci-green-300); letter-spacing: 0.04em; }
+
+  @media (max-width: 680px) {
+    body { padding: 0 24px 64px; }
+    header { flex-direction: column; gap: 16px; align-items: flex-start; }
+    .hero { padding: 64px 0; }
+    .hero h1 { font-size: 42px; }
+    section { padding: 56px 0; }
+    section h2 { font-size: 30px; }
+    .stat-block { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="wordmark" href="/">Coasify</a>
+  <nav>
+    <a href="#dollar-store">Dollar Store</a>
+    <a href="#thesis">Thesis</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="overline">Coasify Corporation</div>
+  <h1>Financial infrastructure built for permanence.</h1>
+  <p>Coasify is the institutional parent behind a portfolio of DeFi protocols. We build systems that remove transaction costs — and then get out of the way.</p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="#contact">Get in touch</a>
+    <a class="btn-ghost" href="#thesis">Read the thesis</a>
+  </div>
+</div>
+
+<section id="thesis">
+  <div class="section-label">The thesis</div>
+  <h2>When transaction costs approach zero, resources flow to their most efficient allocation.</h2>
+  <p class="lede">The name comes from the Coase theorem, and the theorem is the business plan. Every basis point of friction in a financial system is a quiet tax on coordination. Remove the friction and markets organize themselves.</p>
+  <p>Coasify exists to identify the places where that friction is pure artifact — cost without compensating function — and to build the infrastructure that eliminates it.</p>
+  <div class="pullquote">
+    <p>&ldquo;When transaction costs approach zero, resources flow to their most efficient allocation.&rdquo;</p>
+    <cite>Ronald Coase — The Problem of Social Cost, 1960</cite>
+  </div>
+</section>
+
+<section id="dollar-store">
+  <div class="section-label">First protocol</div>
+  <h2>Dollar Store</h2>
+  <div class="tag-row">
+    <span class="tag">DeFi protocol</span>
+    <span class="tag">Stablecoins</span>
+  </div>
+  <p class="lede">Dollar Store enables zero-fee, frictionless 1:1 swaps between tokenized representations of the same underlying asset.</p>
+  <p>The thesis is simple: stablecoins are a coordination problem, not a price discovery problem. A dollar is a dollar. Charging a spread to move between two representations of the same dollar is friction without function — exactly the kind of cost the protocol exists to remove.</p>
+  <div class="stat-block">
+    <div class="stat">
+      <div class="stat-label">Swap fee</div>
+      <div class="stat-value">$0</div>
+      <div class="stat-sub">Always</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Exchange rate</div>
+      <div class="stat-value">1:1</div>
+      <div class="stat-sub">By construction</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Protocols</div>
+      <div class="stat-value">1</div>
+      <div class="stat-sub">More to come</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-card">
+    <div class="section-label" style="color: var(--ci-gold-700);">Contact</div>
+    <h2>One clear next step.</h2>
+    <p>For investment inquiries, press, or anything else — write to us. We read everything.</p>
+    <a class="email" href="mailto:hello@coasify.com">hello@coasify.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-wordmark">Coasify</div>
+  <div class="footer-note">Coasify Corporation — Delaware</div>
+</footer>
+
+</body>
+</html>

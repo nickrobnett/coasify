@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coasify Corporation — Brand Style Guide v3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ci-white:       #FAFAF8;
+    --ci-cream:       #F0EDE6;
+    --ci-green-900:   #0D1F15;
+    --ci-green-800:   #1A3828;
+    --ci-green:       #2D5A3D;
+    --ci-green-500:   #4A7C5A;
+    --ci-green-300:   #7FAF92;
+    --ci-green-100:   #C2D9CC;
+    --ci-green-50:    #EAF3EE;
+    --ci-gold:        #B08A2A;
+    --ci-gold-700:    #7A5A0E;
+    --ci-gold-500:    #C9A84C;
+    --ci-gold-200:    #E8D4A0;
+    --ci-gold-50:     #F8F1E0;
+    --display:        'Cormorant Garamond', 'Palatino Linotype', Palatino, Georgia, serif;
+    --body:           'EB Garamond', Georgia, 'Times New Roman', serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--ci-white); color: var(--ci-green-900); font-family: var(--body); font-size: 17px; line-height: 1.7; }
+  body { max-width: 900px; margin: 0 auto; padding: 80px 48px 120px; }
+
+  .sg-section { margin-top: 96px; padding-top: 48px; border-top: 1px solid var(--ci-green-100); }
+  .sg-section:first-of-type { border-top: none; margin-top: 48px; }
+  .sg-label { font-family: var(--body); font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ci-green-500); margin-bottom: 24px; }
+  .sg-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+
+  .sg-header { padding: 80px 0 64px; border-bottom: 1px solid var(--ci-green-100); }
+  .sg-wordmark { font-family: var(--display); font-size: 52px; font-weight: 600; letter-spacing: -0.01em; color: var(--ci-green); line-height: 1; margin-bottom: 16px; }
+  .sg-tagline { font-family: var(--body); font-size: 18px; font-style: italic; color: var(--ci-green-500); margin-bottom: 32px; }
+  .sg-meta { display: flex; gap: 32px; }
+  .sg-meta-item { font-size: 13px; color: var(--ci-green-500); }
+  .sg-meta-item strong { color: var(--ci-green-800); font-weight: 500; }
+  .version-badge { display: inline-block; background: var(--ci-gold-50); border: 1px solid var(--ci-gold-200); border-radius: 2px; padding: 4px 14px; font-size: 12px; color: var(--ci-gold-700); letter-spacing: 0.08em; margin-bottom: 24px; font-family: var(--body); }
+
+  /* SWATCHES */
+  .swatch-group { margin-bottom: 40px; }
+  .swatch-group-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ci-green-500); margin-bottom: 14px; }
+  .swatch-row { display: flex; gap: 12px; align-items: flex-end; }
+  .swatch { flex: 1; border-radius: 3px; overflow: hidden; }
+  .swatch-color { height: 72px; border: 1px solid rgba(0,0,0,0.07); border-radius: 2px; }
+  .swatch-info { padding: 10px 0 0; }
+  .swatch-name { font-size: 13px; font-weight: 500; color: var(--ci-green-800); display: block; }
+  .swatch-hex { font-size: 12px; color: var(--ci-green-500); font-family: 'Courier New', monospace; }
+  .swatch-role { font-size: 11px; color: var(--ci-green-300); margin-top: 2px; }
+
+  .color-usage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
+  .color-usage-card { padding: 24px; border: 1px solid var(--ci-green-100); border-radius: 3px; }
+  .color-usage-card h4 { font-family: var(--display); font-size: 18px; font-weight: 600; color: var(--ci-green); margin-bottom: 10px; }
+  .color-usage-card p { font-size: 14px; color: var(--ci-green-500); line-height: 1.6; }
+
+  /* TYPOGRAPHY */
+  .type-specimen { margin-bottom: 48px; padding-bottom: 40px; border-bottom: 1px solid var(--ci-green-50); }
+  .type-specimen:last-child { border-bottom: none; }
+  .type-meta-name { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ci-gold); margin-bottom: 4px; }
+  .type-meta-spec { font-size: 12px; color: var(--ci-green-300); font-family: 'Courier New', monospace; margin-bottom: 20px; }
+
+  .t-display { font-family: var(--display); font-size: 64px; font-weight: 600; line-height: 1.05; color: var(--ci-green); letter-spacing: -0.02em; }
+  .t-h1 { font-family: var(--display); font-size: 48px; font-weight: 600; line-height: 1.1; color: var(--ci-green); letter-spacing: -0.01em; }
+  .t-h2 { font-family: var(--display); font-size: 36px; font-weight: 500; line-height: 1.15; color: var(--ci-green); }
+  .t-body { font-family: var(--body); font-size: 17px; line-height: 1.72; color: var(--ci-green-900); }
+  .t-overline { font-family: var(--body); font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ci-green-500); }
+  .t-caption { font-family: var(--body); font-size: 13px; letter-spacing: 0.04em; color: var(--ci-green-500); }
+
+  /* SPACING */
+  .spacing-row { display: flex; align-items: flex-end; gap: 20px; flex-wrap: wrap; }
+  .spacing-unit { display: flex; flex-direction: column; align-items: flex-start; }
+  .spacing-bar { background: var(--ci-gold-200); height: 12px; border-radius: 2px; margin-bottom: 8px; }
+  .spacing-val { font-family: 'Courier New', monospace; font-size: 12px; color: var(--ci-gold-700); font-weight: 600; }
+  .spacing-name { font-size: 11px; color: var(--ci-green-300); }
+
+  /* COMPONENTS */
+  .component-block { margin-bottom: 48px; }
+  .component-title { font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ci-green-300); margin-bottom: 20px; }
+  .component-demo { padding: 40px; background: var(--ci-white); border: 1px solid var(--ci-green-100); border-radius: 3px; }
+
+  .btn-primary { display: inline-block; padding: 12px 32px; background: var(--ci-green); color: var(--ci-white); font-family: var(--body); font-size: 15px; font-weight: 500; letter-spacing: 0.04em; border: 1px solid var(--ci-green); border-radius: 2px; cursor: pointer; text-decoration: none; }
+  .btn-secondary { display: inline-block; padding: 12px 32px; background: transparent; color: var(--ci-green); font-family: var(--body); font-size: 15px; font-weight: 500; letter-spacing: 0.04em; border: 1px solid var(--ci-green-300); border-radius: 2px; cursor: pointer; text-decoration: none; }
+  .btn-gold { display: inline-block; padding: 12px 32px; background: var(--ci-gold); color: var(--ci-white); font-family: var(--body); font-size: 15px; font-weight: 500; letter-spacing: 0.04em; border: 1px solid var(--ci-gold); border-radius: 2px; cursor: pointer; text-decoration: none; }
+  .btn-ghost { display: inline-block; padding: 12px 32px; background: transparent; color: var(--ci-green-500); font-family: var(--body); font-size: 15px; font-weight: 400; letter-spacing: 0.04em; border: none; border-radius: 2px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--ci-green-100); }
+  .btn-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+  .divider-std { border: none; border-top: 1px solid var(--ci-green-100); margin: 24px 0; }
+  .divider-gold { border: none; border-top: 2px solid var(--ci-gold); width: 48px; margin: 16px 0; }
+  .divider-ornament { display: flex; align-items: center; gap: 16px; margin: 24px 0; color: var(--ci-gold); font-size: 18px; }
+  .divider-ornament::before, .divider-ornament::after { content: ''; flex: 1; border-top: 1px solid var(--ci-green-100); }
+
+  .card { background: var(--ci-white); border: 1px solid var(--ci-green-100); border-radius: 3px; padding: 32px; }
+  .card-gold { background: var(--ci-gold-50); border: 1px solid var(--ci-gold-200); border-radius: 3px; padding: 32px; }
+  .card-dark { background: var(--ci-green-900); border: 1px solid var(--ci-green-800); border-radius: 3px; padding: 32px; }
+  .card h3 { font-family: var(--display); font-size: 22px; font-weight: 600; color: var(--ci-green); margin-bottom: 10px; }
+  .card p { font-size: 15px; color: var(--ci-green-500); line-height: 1.65; }
+  .card-gold h3 { font-family: var(--display); font-size: 22px; font-weight: 600; color: var(--ci-gold-700); margin-bottom: 10px; }
+  .card-gold p { font-size: 15px; color: var(--ci-gold-700); opacity: 0.85; line-height: 1.65; }
+  .card-dark h3 { font-family: var(--display); font-size: 22px; font-weight: 600; color: var(--ci-gold-200); margin-bottom: 10px; }
+  .card-dark p { font-size: 15px; color: var(--ci-green-300); line-height: 1.65; }
+
+  .tag { display: inline-block; padding: 4px 14px; border: 1px solid var(--ci-green-100); border-radius: 2px; font-size: 12px; font-family: var(--body); color: var(--ci-green-500); letter-spacing: 0.06em; background: var(--ci-green-50); }
+  .tag-gold { display: inline-block; padding: 4px 14px; border: 1px solid var(--ci-gold-200); border-radius: 2px; font-size: 12px; font-family: var(--body); color: var(--ci-gold-700); letter-spacing: 0.06em; background: var(--ci-gold-50); }
+  .tag-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+  .stat-block { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--ci-green-100); border: 1px solid var(--ci-green-100); border-radius: 3px; overflow: hidden; }
+  .stat { background: var(--ci-white); padding: 24px; }
+  .stat-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ci-green-500); margin-bottom: 6px; }
+  .stat-value { font-family: var(--display); font-size: 36px; font-weight: 600; color: var(--ci-green); line-height: 1; }
+  .stat-sub { font-size: 13px; color: var(--ci-green-300); margin-top: 4px; font-style: italic; }
+
+  .pullquote { border-left: 3px solid var(--ci-gold); padding: 4px 0 4px 28px; margin: 32px 0; }
+  .pullquote p { font-family: var(--display); font-size: 28px; font-weight: 400; font-style: italic; color: var(--ci-green); line-height: 1.4; }
+  .pullquote cite { font-size: 13px; color: var(--ci-green-500); margin-top: 12px; display: block; font-style: normal; letter-spacing: 0.08em; }
+
+  /* MERCH */
+  .merch-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  .merch-card { border-radius: 3px; padding: 40px 32px; text-align: center; border: 1px solid rgba(0,0,0,0.06); }
+  .merch-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; margin-top: 20px; font-family: var(--body); }
+
+  /* BRAND COMPARE */
+  .brand-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; border: 1px solid var(--ci-green-100); border-radius: 3px; overflow: hidden; background: var(--ci-green-100); }
+  .brand-col { padding: 32px; }
+  .brand-col.coasify { background: var(--ci-white); }
+  .brand-col.dollarstore { background: #0F0F0F; }
+  .brand-col-label { font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 20px; }
+  .brand-col.coasify .brand-col-label { color: var(--ci-green-500); }
+  .brand-col.dollarstore .brand-col-label { color: #555; }
+  .brand-attr { margin-bottom: 14px; }
+  .brand-attr-key { font-size: 12px; color: var(--ci-green-300); margin-bottom: 3px; }
+  .brand-attr-val { font-size: 15px; color: var(--ci-green-800); }
+  .brand-col.dollarstore .brand-attr-val { color: #CCCCCC; font-family: 'Courier New', monospace; font-size: 14px; }
+
+  /* DO/DONT */
+  .do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; border-radius: 3px; overflow: hidden; background: var(--ci-green-100); }
+  .do-block { background: var(--ci-white); padding: 28px 28px 28px 32px; border-top: 3px solid var(--ci-gold); }
+  .dont-block { background: var(--ci-white); padding: 28px 28px 28px 32px; border-top: 3px solid var(--ci-green-300); }
+  .do-header { font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ci-gold-700); margin-bottom: 14px; }
+  .dont-header { font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ci-green-300); margin-bottom: 14px; }
+  .do-block p, .dont-block p { font-size: 15px; color: var(--ci-green-800); line-height: 1.65; margin-bottom: 10px; }
+  .do-block p:last-child, .dont-block p:last-child { margin-bottom: 0; }
+
+  .sg-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .sg-table th { text-align: left; padding: 10px 16px; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ci-green-500); border-bottom: 1px solid var(--ci-green-100); }
+  .sg-table td { padding: 14px 16px; border-bottom: 1px solid var(--ci-green-50); color: var(--ci-green-800); vertical-align: top; }
+  .sg-table td code { font-family: 'Courier New', monospace; font-size: 13px; background: var(--ci-green-50); padding: 2px 7px; border-radius: 2px; color: var(--ci-green-500); }
+  .sg-table tr:last-child td { border-bottom: none; }
+
+  .note { padding: 16px 20px; background: var(--ci-gold-50); border-left: 2px solid var(--ci-gold); font-size: 14px; color: var(--ci-gold-700); line-height: 1.65; border-radius: 0 2px 2px 0; margin: 24px 0; }
+
+  /* PRECEDENT STRIP */
+  .precedent-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; border-radius: 3px; overflow: hidden; background: var(--ci-green-100); margin-top: 28px; }
+  .precedent-block { padding: 20px; text-align: center; }
+  .precedent-dot { width: 32px; height: 32px; border-radius: 50%; margin: 0 auto 12px; }
+  .precedent-name { font-size: 13px; font-weight: 500; color: var(--ci-green-800); display: block; }
+  .precedent-context { font-size: 11px; color: var(--ci-green-500); margin-top: 3px; }
+
+  .footer { margin-top: 120px; padding-top: 32px; border-top: 1px solid var(--ci-green-100); display: flex; justify-content: space-between; align-items: center; }
+  .footer-wordmark { font-family: var(--display); font-size: 22px; font-weight: 500; color: var(--ci-green-300); }
+  .footer-version { font-size: 12px; color: var(--ci-green-300); letter-spacing: 0.08em; }
+
+  @media (max-width: 680px) {
+    body { padding: 48px 24px 80px; }
+    .sg-row-3, .color-usage-grid, .brand-compare, .do-dont, .merch-row, .precedent-strip { grid-template-columns: 1fr; }
+    .stat-block { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sg-header">
+  <div class="version-badge">Version 3.0 — Hunter Green & Antique Gold</div>
+  <div class="sg-wordmark">Coasify</div>
+  <div class="sg-tagline">Brand Style Guide — Version 3.0</div>
+  <div class="sg-meta">
+    <div class="sg-meta-item"><strong>Entity</strong><br>Coasify Corporation (Delaware C-corp)</div>
+    <div class="sg-meta-item"><strong>First product</strong><br>Dollar Store</div>
+    <div class="sg-meta-item"><strong>Register</strong><br>Institutional</div>
+    <div class="sg-meta-item"><strong>Updated</strong><br>2025</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="sg-section">
+  <div class="sg-label">01 — About</div>
+  <div class="t-h2" style="margin-bottom:20px;">A holding company for frictionless financial infrastructure.</div>
+  <p class="t-body" style="max-width:680px;margin-bottom:24px;">Coasify Corporation is the legal and institutional parent behind a portfolio of DeFi protocols. Its name derives from the Coase theorem: when transaction costs approach zero, resources naturally flow to their most efficient allocation.</p>
+  <p class="t-body" style="max-width:680px;">The green-and-gold palette is not incidental. It carries decades of institutional precedent — British racing, Ivy League, old-money asset management — and redeployed here it signals exactly the right register: permanent, considered, not trying to impress anyone.</p>
+</div>
+
+<!-- COLORS -->
+<div class="sg-section">
+  <div class="sg-label">02 — Color</div>
+
+  <div class="swatch-group">
+    <div class="swatch-group-label">Neutrals</div>
+    <div class="swatch-row">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FAFAF8;"></div>
+        <div class="swatch-info"><span class="swatch-name">White</span><span class="swatch-hex">#FAFAF8</span><div class="swatch-role">Primary background</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F0EDE6;"></div>
+        <div class="swatch-info"><span class="swatch-name">Cream</span><span class="swatch-hex">#F0EDE6</span><div class="swatch-role">Secondary background</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#C2D9CC;"></div>
+        <div class="swatch-info"><span class="swatch-name">Sage</span><span class="swatch-hex">#C2D9CC</span><div class="swatch-role">Borders, dividers</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="swatch-group">
+    <div class="swatch-group-label">Green — primary color</div>
+    <div class="swatch-row">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0D1F15;"></div>
+        <div class="swatch-info"><span class="swatch-name">Forest</span><span class="swatch-hex">#0D1F15</span><div class="swatch-role">Body text</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#1A3828;"></div>
+        <div class="swatch-info"><span class="swatch-name">Deep Green</span><span class="swatch-hex">#1A3828</span><div class="swatch-role">Headings, emphasis</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#2D5A3D;"></div>
+        <div class="swatch-info"><span class="swatch-name">Hunter ★</span><span class="swatch-hex">#2D5A3D</span><div class="swatch-role">Primary brand color</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#4A7C5A;"></div>
+        <div class="swatch-info"><span class="swatch-name">Fern</span><span class="swatch-hex">#4A7C5A</span><div class="swatch-role">Secondary text</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#7FAF92;"></div>
+        <div class="swatch-info"><span class="swatch-name">Lichen</span><span class="swatch-hex">#7FAF92</span><div class="swatch-role">Muted, borders</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="swatch-group">
+    <div class="swatch-group-label">Gold — accent color</div>
+    <div class="swatch-row">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#7A5A0E;"></div>
+        <div class="swatch-info"><span class="swatch-name">Antique Dark</span><span class="swatch-hex">#7A5A0E</span><div class="swatch-role">Text on gold bg</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#B08A2A;"></div>
+        <div class="swatch-info"><span class="swatch-name">Antique Gold ★</span><span class="swatch-hex">#B08A2A</span><div class="swatch-role">Primary accent</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#C9A84C;"></div>
+        <div class="swatch-info"><span class="swatch-name">Warm Gold</span><span class="swatch-hex">#C9A84C</span><div class="swatch-role">Hover, decorative</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#E8D4A0;"></div>
+        <div class="swatch-info"><span class="swatch-name">Parchment Gold</span><span class="swatch-hex">#E8D4A0</span><div class="swatch-role">Tinted borders</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F8F1E0;"></div>
+        <div class="swatch-info"><span class="swatch-name">Gold Mist</span><span class="swatch-hex">#F8F1E0</span><div class="swatch-role">Accent backgrounds</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">★ Hunter (#2D5A3D) and Antique Gold (#B08A2A) are the two brand-defining colors. The gold is deliberately desaturated — it reads as aged and permanent rather than flashy or festive. If it looks like a sports trophy, it's too bright. If it looks like a brass doorknob on a law firm's entrance, it's right.</div>
+
+  <div class="color-usage-grid">
+    <div class="color-usage-card">
+      <h4>Why gold works here</h4>
+      <p>Gold is the warm complement to cool green — they sit on opposite sides of the color wheel. This is the same logic that made teal work with brown, but the cultural resonance of green-and-gold is deeper and more institutional. It has a settled, earned quality that teal doesn't.</p>
+    </div>
+    <div class="color-usage-card">
+      <h4>What gold signals</h4>
+      <p>Permanence. Standard-setting. Quality that doesn't need to announce itself. Used sparingly — pull-quote rules, active states, divider accents, the occasional data callout — it elevates without dominating. It should feel discovered, not plastered.</p>
+    </div>
+    <div class="color-usage-card">
+      <h4>What to avoid</h4>
+      <p>Gold on white backgrounds reads as yellow. Use it on green or cream surfaces where the warm/cool contrast lands properly. And keep the saturation muted — #B08A2A, not #FFD700. Bright gold is celebration; antique gold is institution.</p>
+    </div>
+    <div class="color-usage-card">
+      <h4>Merch case</h4>
+      <p>Hunter green + antique gold is a nearly perfect t-shirt palette. The wordmark in Parchment Gold (#E8D4A0) on Hunter reads as premium without effort. The inverse — cream tee, Hunter green text with a gold rule — is also strong. No workarounds needed.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:40px;">
+    <div class="swatch-group-label" style="margin-bottom:20px;">Cultural precedent — green & gold</div>
+    <div class="precedent-strip">
+      <div class="precedent-block" style="background:#FAFAF8;">
+        <div class="precedent-dot" style="background:#2D5A3D; border: 3px solid #B08A2A;"></div>
+        <span class="precedent-name">Harrods</span>
+        <span class="precedent-context">Luxury retail, London</span>
+      </div>
+      <div class="precedent-block" style="background:#FAFAF8;">
+        <div class="precedent-dot" style="background:#1A3828; border: 3px solid #C9A84C;"></div>
+        <span class="precedent-name">Ivy League seals</span>
+        <span class="precedent-context">Academic institution</span>
+      </div>
+      <div class="precedent-block" style="background:#FAFAF8;">
+        <div class="precedent-dot" style="background:#2D5A3D; border: 3px solid #B08A2A;"></div>
+        <span class="precedent-name">British racing</span>
+        <span class="precedent-context">Heritage motorsport</span>
+      </div>
+      <div class="precedent-block" style="background:#FAFAF8;">
+        <div class="precedent-dot" style="background:#0D1F15; border: 3px solid #C9A84C;"></div>
+        <span class="precedent-name">Private banking</span>
+        <span class="precedent-context">Old-money asset mgmt</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TYPOGRAPHY -->
+<div class="sg-section">
+  <div class="sg-label">03 — Typography</div>
+  <p class="t-body" style="margin-bottom:40px;max-width:620px;">Typography is unchanged from v1 and v2. Cormorant Garamond for display and headings. EB Garamond for body. With the gold accent, the overline label now reads in gold — it adds a small, intentional warmth to the typographic hierarchy.</p>
+
+  <div class="type-specimen">
+    <div class="type-meta-name">Cormorant Garamond — Display</div>
+    <div class="type-meta-spec">64px / 600 / tracking: -0.02em</div>
+    <div class="t-display">When transaction<br><em>costs approach zero.</em></div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-meta-name">Cormorant Garamond — Heading 1</div>
+    <div class="type-meta-spec">48px / 600 / tracking: -0.01em</div>
+    <div class="t-h1">Financial infrastructure<br>built for permanence.</div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-meta-name">Cormorant Garamond — Heading 2</div>
+    <div class="type-meta-spec">36px / 500</div>
+    <div class="t-h2">Frictionless by design.</div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-meta-name">EB Garamond — Body</div>
+    <div class="type-meta-spec">17px / 400 / line-height: 1.72</div>
+    <p class="t-body" style="max-width:620px;">Dollar Store is Coasify's first protocol. It enables zero-fee, frictionless 1:1 swaps between tokenized representations of the same underlying asset. The thesis is simple: stablecoins are a coordination problem, not a price discovery problem.</p>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-meta-name">Overline + Caption</div>
+    <div class="type-meta-spec">Overline: 11px / 500 uppercase / gold | Caption: 13px / green-500</div>
+    <div class="t-overline" style="color:var(--ci-gold);margin-bottom:10px;">First principle</div>
+    <div class="t-caption">Resources flow to their most efficient allocation when friction is eliminated.</div>
+  </div>
+</div>
+
+<!-- SPACING -->
+<div class="sg-section">
+  <div class="sg-label">04 — Spacing</div>
+  <p class="t-body" style="margin-bottom:32px;max-width:580px;">8px base unit. Unchanged across all versions.</p>
+  <div class="spacing-row">
+    <div class="spacing-unit"><div class="spacing-bar" style="width:8px;"></div><div class="spacing-val">8px</div><div class="spacing-name">xs</div></div>
+    <div class="spacing-unit"><div class="spacing-bar" style="width:16px;"></div><div class="spacing-val">16px</div><div class="spacing-name">sm</div></div>
+    <div class="spacing-unit"><div class="spacing-bar" style="width:24px;"></div><div class="spacing-val">24px</div><div class="spacing-name">md</div></div>
+    <div class="spacing-unit"><div class="spacing-bar" style="width:32px;"></div><div class="spacing-val">32px</div><div class="spacing-name">lg</div></div>
+    <div class="spacing-unit"><div class="spacing-bar" style="width:48px;"></div><div class="spacing-val">48px</div><div class="spacing-name">xl</div></div>
+    <div class="spacing-unit"><div class="spacing-bar" style="width:64px;"></div><div class="spacing-val">64px</div><div class="spacing-name">2xl</div></div>
+    <div class="spacing-unit"><div class="spacing-bar" style="width:96px;"></div><div class="spacing-val">96px</div><div class="spacing-name">3xl</div></div>
+    <div class="spacing-unit"><div class="spacing-bar" style="width:128px;"></div><div class="spacing-val">128px</div><div class="spacing-name">4xl</div></div>
+  </div>
+</div>
+
+<!-- COMPONENTS -->
+<div class="sg-section">
+  <div class="sg-label">05 — Components</div>
+
+  <div class="component-block">
+    <div class="component-title">Buttons</div>
+    <div class="component-demo">
+      <div class="btn-row">
+        <a class="btn-primary" href="#">Invest in Coasify</a>
+        <a class="btn-secondary" href="#">Read the thesis</a>
+        <a class="btn-gold" href="#">Schedule a call</a>
+        <a class="btn-ghost" href="#">View documentation</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="component-block">
+    <div class="component-title">Dividers</div>
+    <div class="component-demo">
+      <p class="t-caption" style="margin-bottom:12px;">Standard rule</p>
+      <hr class="divider-std">
+      <p class="t-caption" style="margin:20px 0 12px;">Gold accent rule (section marker)</p>
+      <hr class="divider-gold">
+      <p class="t-caption" style="margin:20px 0 12px;">Ornamental divider</p>
+      <div class="divider-ornament">◆</div>
+    </div>
+  </div>
+
+  <div class="component-block">
+    <div class="component-title">Cards</div>
+    <div class="sg-row-3">
+      <div class="card">
+        <h3>Standard</h3>
+        <p>White background, green border, Hunter heading. Core content blocks and feature descriptions.</p>
+      </div>
+      <div class="card-gold">
+        <h3>Gold accent</h3>
+        <p>Gold mist background. For callouts, highlights, or anything that warrants special attention.</p>
+      </div>
+      <div class="card-dark">
+        <h3>Inverse</h3>
+        <p>Forest background, gold heading. Use sparingly — one high-impact block per page at most.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="component-block">
+    <div class="component-title">Tags & badges</div>
+    <div class="component-demo">
+      <div class="tag-row">
+        <span class="tag">DeFi Protocol</span>
+        <span class="tag">Stablecoins</span>
+        <span class="tag">Series Seed</span>
+        <span class="tag-gold">Live on Mainnet</span>
+        <span class="tag-gold">Audited</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="component-block">
+    <div class="component-title">Stat / data display</div>
+    <div class="component-demo">
+      <div class="stat-block">
+        <div class="stat">
+          <div class="stat-label">Total Volume</div>
+          <div class="stat-value">$4.2B</div>
+          <div class="stat-sub">Since deployment</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Swap Fee</div>
+          <div class="stat-value">$0</div>
+          <div class="stat-sub">Always</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Protocols</div>
+          <div class="stat-value">1</div>
+          <div class="stat-sub">Dollar Store — live</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="component-block">
+    <div class="component-title">Pull quote</div>
+    <div class="component-demo">
+      <div class="pullquote">
+        <p>"When transaction costs approach zero, resources flow to their most efficient allocation."</p>
+        <cite>Ronald Coase — The Problem of Social Cost, 1960</cite>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MERCH -->
+<div class="sg-section">
+  <div class="sg-label">06 — Merch preview</div>
+  <p class="t-body" style="margin-bottom:28px;max-width:580px;">Green and gold translates to physical goods better than any version so far. All three colorways work without adjustment.</p>
+  <div class="merch-row">
+    <div class="merch-card" style="background:#2D5A3D;">
+      <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:36px;font-weight:600;color:#E8D4A0;letter-spacing:0.02em;">Coasify</div>
+      <div class="merch-label" style="color:#7FAF92;">Hunter + Parchment Gold</div>
+    </div>
+    <div class="merch-card" style="background:#F0EDE6;border:1px solid #C2D9CC;">
+      <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:36px;font-weight:600;color:#2D5A3D;letter-spacing:0.02em;">Coasify</div>
+      <div class="merch-label" style="color:#7FAF92;">Cream + Hunter</div>
+    </div>
+    <div class="merch-card" style="background:#0D1F15;">
+      <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:36px;font-weight:600;color:#B08A2A;letter-spacing:0.02em;">Coasify</div>
+      <div class="merch-label" style="color:#4A7C5A;">Forest + Antique Gold</div>
+    </div>
+  </div>
+</div>
+
+<!-- BRAND COMPARE -->
+<div class="sg-section">
+  <div class="sg-label">07 — Coasify vs. Dollar Store</div>
+  <div class="brand-compare">
+    <div class="brand-col coasify">
+      <div class="brand-col-label">Coasify Corporation</div>
+      <div class="brand-attr"><div class="brand-attr-key">Primary color</div><div class="brand-attr-val">Hunter green (#2D5A3D)</div></div>
+      <div class="brand-attr"><div class="brand-attr-key">Accent color</div><div class="brand-attr-val">Antique gold (#B08A2A)</div></div>
+      <div class="brand-attr"><div class="brand-attr-key">Background</div><div class="brand-attr-val">White / Cream — light-first</div></div>
+      <div class="brand-attr"><div class="brand-attr-key">Typography</div><div class="brand-attr-val">Cormorant Garamond + EB Garamond</div></div>
+      <div class="brand-attr"><div class="brand-attr-key">Register</div><div class="brand-attr-val">Institutional, editorial, settled</div></div>
+      <div class="brand-attr"><div class="brand-attr-key">Audience</div><div class="brand-attr-val">Investors, regulators, press</div></div>
+    </div>
+    <div class="brand-col dollarstore">
+      <div class="brand-col-label">Dollar Store</div>
+      <div class="brand-attr"><div class="brand-attr-key" style="color:#555;">Primary color</div><div class="brand-attr-val">Dollar Green (#85BB65)</div></div>
+      <div class="brand-attr"><div class="brand-attr-key" style="color:#555;">Accent color</div><div class="brand-attr-val">White on dark</div></div>
+      <div class="brand-attr"><div class="brand-attr-key" style="color:#555;">Background</div><div class="brand-attr-val">Near-black — dark-first</div></div>
+      <div class="brand-attr"><div class="brand-attr-key" style="color:#555;">Typography</div><div class="brand-attr-val">JetBrains Mono</div></div>
+      <div class="brand-attr"><div class="brand-attr-key" style="color:#555;">Register</div><div class="brand-attr-val">Minimal, technical, crypto-native</div></div>
+      <div class="brand-attr"><div class="brand-attr-key" style="color:#555;">Audience</div><div class="brand-attr-val">DeFi users, aggregators, devs</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- VOICE -->
+<div class="sg-section">
+  <div class="sg-label">08 — Voice & Tone</div>
+  <div class="do-dont">
+    <div class="do-block">
+      <div class="do-header">Do</div>
+      <p>State the mechanism plainly. "Zero-fee 1:1 swaps between stablecoins."</p>
+      <p>Use economic language that rewards the reader for knowing it.</p>
+      <p>One idea per sentence. Short paragraphs. No exclamation points.</p>
+    </div>
+    <div class="dont-block">
+      <div class="dont-header">Don't</div>
+      <p>Lead with disruption. "We're revolutionizing the stablecoin ecosystem."</p>
+      <p>Use crypto slang in Coasify materials.</p>
+      <p>Explain what the Coase theorem is — the audience knows.</p>
+    </div>
+  </div>
+</div>
+
+<!-- RULES -->
+<div class="sg-section">
+  <div class="sg-label">09 — Usage rules</div>
+  <table class="sg-table">
+    <thead><tr><th>Rule</th><th>Rationale</th></tr></thead>
+    <tbody>
+      <tr><td>Light backgrounds only.</td><td>Dollar Store owns dark. Distinction is brand value.</td></tr>
+      <tr><td>Gold appears no more than 2–3 times per page.</td><td>Scarcity is what makes it feel like gold, not decoration.</td></tr>
+      <tr><td>Never use bright gold (#FFD700 range). Stay at or below #C9A84C.</td><td>Bright gold is festive. Antique gold is institutional.</td></tr>
+      <tr><td>No gradients, no shadows, no blur.</td><td>Flat surfaces communicate confidence.</td></tr>
+      <tr><td>No rounded corners beyond 3px.</td><td>Square-ish corners read institutional, not consumer.</td></tr>
+      <tr><td>No monospace typography.</td><td>Monospace is Dollar Store's voice.</td></tr>
+      <tr><td>Max one primary CTA per view.</td><td>Institutions don't shout. One clear next step.</td></tr>
+      <tr><td>Sentence case everywhere.</td><td>Caps shout. Sentence case is how settled institutions write.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+  <div class="footer-wordmark">Coasify</div>
+  <div class="footer-version">Brand Style Guide v3.0 — Hunter Green & Antique Gold — Internal Use</div>
+</div>
+
+</body>
+</html>
